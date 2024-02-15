@@ -1,11 +1,25 @@
 <script setup lang="ts">
+import { useColorSet } from '@/composables/useColorSet';
+import GlowBox from './GlowBox.vue';
+
+const props = defineProps<{
+  linkTo?: string
+}>();
+
+const { next } = useColorSet();
 
 </script>
 
 <template>
-    <button class="p-1 border-2 rounded-md border-solid border-orange-600 text-orange-600 text-2xl h-fit">
+    <RouterLink @click="next()" v-if="linkTo" :to="linkTo">
+        <GlowBox innerCss="p-2">
+            <slot></slot>
+        </GlowBox>
+    </RouterLink>
+
+    <GlowBox v-if="!linkTo" innerCss="p-2">
         <slot></slot>
-    </button>
+    </GlowBox>
 </template>
 
 <style scoped>

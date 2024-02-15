@@ -1,6 +1,132 @@
-/* color palette from <https://github.com/vuejs/theme> */
 /* @import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'ProtestStrike';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/ProtestStrike-Regular.ttf');
+}
+
+*{
+  box-sizing: border-box;
+}
+
+@layer base {
+  :root {
+    --background:222.2 84% 4.9%;
+    --foreground:210 40% 98%;
+  
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+  
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+  
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+  
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+  
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+  
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    
+    --accenttp:210, 40%, 96.1%, 0.6;
+    --accenttp-background:222.2, 47.4%, 11.2%, 0.9;
+  
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+  
+    --border:214.3 31.8% 91.4%;
+    --input:214.3 31.8% 91.4%;
+    --ring:221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+  
+  .green {
+    --background:222.2 84% 4.9%;
+    --foreground: 116 50% 94%;
+    --card: 120 100% 1%;
+    --card-foreground: 116 50% 94%;
+    --popover: 120 100% 1%;
+    --popover-foreground: 116 50% 94%;
+    --primary: 134 95% 34%;
+    --primary-foreground: 120 100% 1%;
+    --secondary: 161 50% 31%;
+    --secondary-foreground: 116 50% 94%;
+    --muted: 120 100% 80%;
+    --muted-foreground: 116 50% 94%;
+    --accent: 172 49% 52%;
+    --accent-foreground: 120 100% 1%;
+    --accenttp:172, 49%, 52%, 0.6;
+    --accenttp-background:120, 100%, 1%, 0.9;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 118 49% 10%;
+    --border: 120 100% 60%;
+    --input: 120 100% 80%;
+    --ring: 172 49% 60%;
+  }
+}
+
+.red {
+  --background:222.2 84% 4.9%;
+  --foreground: 36 12% 92%;
+  --card: 30 100% 1%;
+  --card-foreground: 36 12% 92%;
+  --popover: 30 100% 1%;
+  --popover-foreground: 36 12% 92%;
+  --primary: 0 93% 35%;
+  --primary-foreground: 36 12% 92%;
+  --secondary: 30 40% 33%;
+  --secondary-foreground: 36 12% 92%;
+  --muted: 30 100% 80%;
+  --muted-foreground: 36 12% 92%;
+  --accent: 30 49% 58%;
+  --accent-foreground: 30 100% 1%;
+  --accenttp:30, 49%, 58%, 0.6;
+  --accenttp-background:30, 100%, 1%, 0.9;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 34 14% 10%;
+  --border: 30 100% 60%;
+  --input: 30 100% 80%;
+  --ring: 30 49% 60%;
+}
+
+.orange {
+  --background:222.2 84% 4.9%;
+  --foreground: 33 31% 93%;
+  --card: 30 100% 1%;
+  --card-foreground: 33 31% 93%;
+  --popover: 30 100% 1%;
+  --popover-foreground: 33 31% 93%;
+  --primary: 34 80% 51%;
+  --primary-foreground: 30 100% 1%;
+  --secondary: 30 81% 34%;
+  --secondary-foreground: 33 31% 93%;
+  --muted: 30 100% 80%;
+  --muted-foreground: 33 31% 93%;
+  --accent: 30 97% 52%;
+  --accent-foreground: 30 100% 1%;
+  --accenttp:30, 97% ,52%, 0.6;
+  --accenttp-background:30, 100%, 1%, 0.9;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 32 29% 10%;
+  --border: 30 100% 60%;
+  --input: 30 100% 80%;
+  --ring: 30 97% 60%;
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
