@@ -14,7 +14,7 @@ const timelineRate = gsap.timeline();
 onMounted(() => {
     if(video.value !== null) {
         watchEffect(() => {
-            timelineRate.clear();
+            timelineRate.clear();            
             animateBg(colorSet?.hueMap.get(colorSet.store.value));
             timelineRate.play();
         })

@@ -13,12 +13,12 @@ const colorSet = inject(colorSetInjectionKey);
 
 <template>
     <RouterLink @click="colorSet?.next()" v-if="linkTo" :to="linkTo">
-        <GlowBox innerCss="p-2">
+        <GlowBox innerCss="p-3">
             <slot></slot>
         </GlowBox>
     </RouterLink>
 
-    <GlowBox v-if="!linkTo" innerCss="p-2">
+    <GlowBox v-if="!linkTo" innerCss="p-3">
         <slot></slot>
     </GlowBox>
 </template>

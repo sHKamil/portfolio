@@ -4,7 +4,9 @@ const animate = require("tailwindcss-animate")
 module.exports = {
   darkMode: ["class"],
   safelist: [
-    "dark",
+    "auto",
+    "red",
+    "orange",
     "green"
   ],
   

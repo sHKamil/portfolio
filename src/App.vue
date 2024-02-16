@@ -25,7 +25,7 @@ provide(colorSetInjectionKey, colorSet);
           <template  #buttons>
             <CustomButton  linkTo="/">HOME</CustomButton>
             <CustomButton linkTo="/projects">PROJECTS</CustomButton>
-            <a href="/resume.pdf" target="_blank"><CustomButton >RESUME</CustomButton></a>
+            <a href="/resume-kh.pdf" target="_blank"><CustomButton >RESUME</CustomButton></a>
           </template>
           <template #icons>
             <a class="text-blue-500 w-12 h-12" href="https://www.linkedin.com/in/kamil-ha%C5%82asa/"><IconLinkedin class="text-primary" /></a>

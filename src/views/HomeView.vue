@@ -13,9 +13,9 @@ const time = gsap.timeline();
 onMounted(() => {
   time.from('.glowBox', { y: '+20', autoAlpha: 0 , duration: .4, ease: "back.out(1.7)", delay: .3 })
   .from('.mainBox', { y: '+20', autoAlpha: 0 , duration: .4, ease: "back.out(1.7)", delay: .3 }, "-=1")
-  .from(popUpHi.value, { y: 20, autoAlpha: 0 , duration: .4, ease: "back.out(1.7)" })
-  .from(popUpIm.value, { y: 20, autoAlpha: 0 , duration: .4, delay: .2, ease: "back.out(1.7)" })
-  .from(popUpName.value, { y: 20, autoAlpha: 0 , duration: .4, ease: "back.out(1.7)" })
+  .from(popUpHi.value, { y: 20, autoAlpha: 0 , duration: .2, ease: "back.out(1.7)" })
+  .from(popUpIm.value, { y: 20, autoAlpha: 0 , duration: .2, delay: .3, ease: "back.out(1.7)" })
+  .from(popUpName.value, { y: 20, autoAlpha: 0 , duration: .2, ease: "back.out(1.7)" })
   .to(cursorBlink.value, { autoAlpha: 1, duration: .5, ease: "power2.inOut", repeat:-1 })
   .from(writeText.value, { duration: 1.7, text: "", delay: .1 });
   time.play();
