@@ -7,6 +7,10 @@ import autoprefixer from "autoprefixer"
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    host:true,
+    port: 80,
+  },
   css: {
     postcss: {
       plugins: [tailwind(), autoprefixer()],

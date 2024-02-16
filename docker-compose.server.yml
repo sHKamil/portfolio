@@ -1,0 +1,16 @@
+version: '3'
+
+services:           
+    frontend:
+        hostname: portfolio
+        build:
+            context: .
+            dockerfile: Dockerfile
+        command: npm run dev
+        volumes:
+            - ./vue/:/usr/src/app
+        networks:
+            - proxy
+networks:
+    proxy:
+        external: true

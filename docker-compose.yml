@@ -1,0 +1,12 @@
+version: '3'
+
+services:           
+    frontend:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        command: npm run dev
+        volumes:
+            - ./vue/:/usr/src/app
+        ports:
+            - "8080:80"
