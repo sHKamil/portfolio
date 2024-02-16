@@ -28,8 +28,8 @@ provide(colorSetInjectionKey, colorSet);
             <a href="/resume-kh.pdf" target="_blank"><CustomButton >RESUME</CustomButton></a>
           </template>
           <template #icons>
-            <a class="text-blue-500 w-12 h-12" href="https://www.linkedin.com/in/kamil-ha%C5%82asa/"><IconLinkedin class="text-primary" /></a>
-            <a class="text-gray-300 w-12 h-12" href="https://github.com/sHKamil"><IconGithub /></a>
+            <a class="text-blue-500 w-12 h-12" href="https://www.linkedin.com/in/kamil-ha%C5%82asa/" target="_blank"><IconLinkedin class="text-primary" /></a>
+            <a class="text-gray-300 w-12 h-12" href="https://github.com/sHKamil" target="_blank"><IconGithub /></a>
           </template>
         </NavBar>
       </div>
