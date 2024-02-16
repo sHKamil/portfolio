@@ -12,21 +12,21 @@ const props = defineProps<{
 </script>
 
 <template>
-   <GlowBox innerCss="p-8">
-      <div class="flex flex-row justify-between gap-8">
+   <GlowBox class="overflow-hidden" innerCss="xl:p-8 p-4">
+      <div class="flex lg:flex-row flex-col justify-between gap-8">
         <div>
-          <p class="text-white text-5xl w-fit">
+          <p class="text-white xl:text-5xl text-2xl w-fit">
             {{ title }}
           </p> 
-          <p class="text-primary text-3xl w-fit">
+          <p class="text-primary xl:text-3xl text-lg w-fit">
             {{ technologies }}
           </p>
         </div>
-        <div class="flex gap-2 flex-col">
-          <a v-if="onlineLink" class="hover:text-primary transition-all duration-300" :href="onlineLink">
+        <div class="flex lg:gap-2 lg:flex-col flex-row justify-around">
+          <a v-if="onlineLink" class="hover:text-primary transition-all duration-300" :href="onlineLink" target="_blank">
             <IconOnline />
           </a>
-          <a v-if="githubLink" class="hover:text-primary transition-all duration-300" :href="githubLink">
+          <a v-if="githubLink" class="hover:text-primary transition-all duration-300" :href="githubLink" target="_blank">
             <IconGithubRounded />
           </a>
         </div>

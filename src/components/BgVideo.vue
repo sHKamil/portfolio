@@ -1,36 +1,39 @@
 <script setup lang="ts">
-import { useColorSet } from '@/composables/useColorSet';
+import { colorSetInjectionKey } from '@/composables/useColorSet';
 import gsap from 'gsap';
-import { onMounted, reactive, ref, watchEffect } from 'vue';
+import { inject, onMounted, reactive, ref, watchEffect } from 'vue';
 
 const video = ref<HTMLVideoElement | null>(null);
 const rate = reactive({ number: 10 })
 const hueDeg = reactive({ deg: 110 });
-const { store, hueMap } = useColorSet();
+const colorSet = inject(colorSetInjectionKey);
+const timelineRate = gsap.timeline();
+
+
 
 onMounted(() => {
     if(video.value !== null) {
         watchEffect(() => {
-            animateBg(hueMap.get(store.value))
-            console.log(hueMap.get(store.value));
-            console.log(store.value);
+            timelineRate.clear();
+            animateBg(colorSet?.hueMap.get(colorSet.store.value));
+            timelineRate.play();
         })
     }
 });
 
 function animateBg(hueDegree?: number) {
+    rate.number = 10;
     if (hueDegree) {
-        gsap.to(hueDeg, { duration: 2, deg: hueDegree });
+        gsap.to(hueDeg, { duration: 1.5, deg: hueDegree });
     } else {
-        gsap.to(hueDeg, { duration: 2, deg: 0 });
+        gsap.to(hueDeg, { duration: 1.5, deg: 0 });
     }
-    gsap.to(rate, { duration: 2, number: 1 });
+    timelineRate.to(rate, { duration: 2, number: 1 });
     watchEffect(() => {
         if(video.value) {
             video.value.playbackRate = rate.number;
         }
-    })
-    rate.number = 10;
+    });
 }
 
 </script>
