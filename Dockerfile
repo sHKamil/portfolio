@@ -2,7 +2,7 @@
 FROM node:latest
 
 # install simple http server for serving static content
-RUN npm install -g http-server
+# RUN npm install -g http-server
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
