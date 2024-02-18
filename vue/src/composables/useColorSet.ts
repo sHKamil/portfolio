@@ -16,11 +16,17 @@ export function useColorSet () {
       red: 'red',
     },
   });
-  
-  const { state, next } = useCycleList<ColorModes>(['green', 'orange', 'red', 'auto'], { initialValue: 'auto' });
-  watchEffect(() => mode.value = state.value);
+  let initial: ColorModes = 'auto';
 
   const { store } = useColorMode();
+
+  if (store.value !== undefined && store.value !== 'dark' && store.value !== 'light') {
+    initial = <ColorModes>store.value;
+  }
+
+  const { state, next } = useCycleList<ColorModes>(['green', 'orange', 'red', 'auto'], { initialValue: initial });
+  watchEffect(() => mode.value = state.value);
+
   const hueMap = new Map<string, number>([
       ['auto', 0],
       ['red', 160],

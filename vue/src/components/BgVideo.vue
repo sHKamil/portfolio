@@ -9,8 +9,6 @@ const hueDeg = reactive({ deg: 110 });
 const colorSet = inject(colorSetInjectionKey);
 const timelineRate = gsap.timeline();
 
-
-
 onMounted(() => {
     if(video.value !== null) {
         watchEffect(() => {
